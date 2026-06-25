@@ -4,7 +4,17 @@ import { motion } from "framer-motion";
 import { reveal } from "@/lib/animations";
 import Marquee from "@/components/ui/Marquee";
 
-const logos = ["NOVA", "LOGOIPSUM", "Aster", "Kronos", "ST10", "PayNest", "Connecto", "EduNova"];
+const logos = [
+  "ASCII",
+  "CSA",
+  "CAPS",
+  "CASH",
+  "CHOIR",
+  "SWO",
+  "Student council",
+  "Sports department",
+  "IEEE"
+];
 
 export function Brands() {
   return (
