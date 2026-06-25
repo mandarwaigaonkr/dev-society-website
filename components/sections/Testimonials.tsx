@@ -3,32 +3,46 @@ import { TestimonialsMarquee } from "@/components/sections/TestimonialsMarquee";
 
 const testimonials = [
   {
-    quote: "Alex truly understood my vision & turned it into impactful designs, results went beyond my expectations!",
-    name: "Maya Wells",
-    role: "Founder, Studio Noma",
-    rating: "4.9",
+    quote: "Very good work by developer's society",
+    name: "Student User",
+    role: "Student",
+    rating: "5.0",
     avatar: "/avatars/person-1.svg"
   },
   {
-    quote: "Working with Alex felt calm and exact. The new site gave our team clarity and doubled qualified inquiries.",
-    name: "Noah Grant",
-    role: "CEO, PayNest",
+    quote: "excellent app, smart work by developers",
+    name: "Student User",
+    role: "Student",
+    rating: "5.0",
+    avatar: "/avatars/person-3.svg"
+  },
+  {
+    quote: "very useful and helpul app for freshiers",
+    name: "Student User",
+    role: "Student",
     rating: "5.0",
     avatar: "/avatars/person-2.svg"
   },
   {
-    quote: "As a small business owner, I appreciated how direct the process was. Everything launched smoothly.",
-    name: "Elena Ruiz",
-    role: "Owner, Mesa",
-    rating: "4.8",
+    quote: "very nice, very good UI/UX",
+    name: "Student User",
+    role: "Student",
+    rating: "5.0",
+    avatar: "/avatars/person-1.svg"
+  },
+  {
+    quote: "Actually the UI/UX developer build crazy UI/UX design",
+    name: "Student User",
+    role: "Student",
+    rating: "5.0",
     avatar: "/avatars/person-3.svg"
   },
   {
-    quote: "The collaboration felt structured and premium from day one. We launched with a site the whole team can use.",
-    name: "Jon Bell",
-    role: "COO, Connecto",
-    rating: "4.9",
-    avatar: "/avatars/person-1.svg"
+    quote: "It's a great app, hoping to make something similar and cool in my tenure here. This initiative really has inspired me. Thank you",
+    name: "Student User",
+    role: "Student",
+    rating: "5.0",
+    avatar: "/avatars/person-2.svg"
   }
 ];
 
