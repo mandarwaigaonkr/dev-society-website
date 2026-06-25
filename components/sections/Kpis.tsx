@@ -5,10 +5,10 @@ import { reveal, stagger } from "@/lib/animations";
 import Counter from "@/components/ui/Counter";
 
 const stats = [
-  [100, "%", "Client Satisfaction Rate"],
-  [50, "+", "Projects Completed"],
-  [4, "X", "Client Growth"],
-  [7, "+", "Years of Experience"]
+  [98, "%", "Client Satisfaction Rate"],
+  [2, "+", "Projects Completed"],
+  [2, "x", "Client Growth"],
+  [2, "+", "Years of Experience"]
 ];
 
 export function Kpis() {

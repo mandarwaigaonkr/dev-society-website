@@ -14,7 +14,7 @@ export function Projects() {
       <div className="container-main">
         <SectionHeader
           eyebrow="Projects"
-          title="Designed, Built, & Shipped"
+          title="Designed, Built & Deployed"
           subtitle="Selected projects that reflect my approach to design, development, and execution."
         />
         <motion.div variants={stagger} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.12 }} className="mt-16 grid gap-5 md:grid-cols-2">
