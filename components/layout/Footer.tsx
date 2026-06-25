@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowRight, Facebook, Github, Instagram, Linkedin } from "lucide-react";
 import { iconPop, reveal, socialChild, stagger } from "@/lib/animations";
@@ -21,8 +20,8 @@ export function Footer() {
             <h2 className="font-display text-lg font-bold">Socials</h2>
             <div className="mt-7 flex max-w-[300px] gap-3 rounded-[28px] bg-white p-3 text-zinc-700">
               <div className="flex h-[178px] w-[136px] items-center justify-center rounded-2xl bg-zinc-100 p-4">
-                <Image
-                  src="/devs-logo.svg"
+                <img
+                  src="/devs-logo-static.svg"
                   alt="Developer Society logo"
                   width={100}
                   height={100}

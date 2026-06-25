@@ -1,7 +1,6 @@
 "use client";
 
-import { motion, useReducedMotion } from "framer-motion";
-import { useState } from "react";
+import { useReducedMotion } from "@/hooks/useReducedMotion";
 
 type Props = {
   children: React.ReactNode;
@@ -11,7 +10,6 @@ type Props = {
 
 export default function Marquee({ children, speed = 30, gap = 56 }: Props) {
   const reduce = useReducedMotion();
-  const [hovered, setHovered] = useState(false);
 
   if (reduce) {
     return (
@@ -23,22 +21,14 @@ export default function Marquee({ children, speed = 30, gap = 56 }: Props) {
 
   return (
     <div
-      className="relative w-full overflow-hidden"
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
+      className="group/marquee relative w-full overflow-hidden"
       style={{
         maskImage: "linear-gradient(to right, transparent, black 8%, black 92%, transparent)"
       }}
     >
-      <motion.div
-        className="flex w-max items-center"
-        style={{ gap }}
-        animate={{ x: ["0%", "-50%"] }}
-        transition={{
-          duration: hovered ? speed * 2 : speed,
-          ease: "linear",
-          repeat: Infinity
-        }}
+      <div
+        className="marquee-track flex w-max items-center group-hover/marquee:[animation-play-state:paused]"
+        style={{ gap, "--marquee-duration": `${speed}s` } as React.CSSProperties}
       >
         <div className="flex shrink-0 items-center" style={{ gap }}>
           {children}
@@ -46,7 +36,7 @@ export default function Marquee({ children, speed = 30, gap = 56 }: Props) {
         <div className="flex shrink-0 items-center" style={{ gap }} aria-hidden="true">
           {children}
         </div>
-      </motion.div>
+      </div>
     </div>
   );
 }

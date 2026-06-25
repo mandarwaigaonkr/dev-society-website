@@ -86,11 +86,10 @@ export const hoverCard = {
 };
 
 export const wordReveal: Variants = {
-  hidden: { opacity: 0, y: 16, filter: "blur(4px)" },
+  hidden: { opacity: 0, y: 16 },
   show: (i: number = 0) => ({
     opacity: 1,
     y: 0,
-    filter: "blur(0px)",
     transition: { ...springSoft, delay: i * 0.05 }
   })
 };

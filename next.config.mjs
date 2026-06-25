@@ -3,7 +3,9 @@ const nextConfig = {
   images: {
     formats: ["image/avif", "image/webp"]
   },
-  optimizeFonts: false
+  experimental: {
+    optimizePackageImports: ["lucide-react", "framer-motion"]
+  }
 };
 
 export default nextConfig;

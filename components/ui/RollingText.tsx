@@ -1,6 +1,6 @@
 "use client";
 
-import { useReducedMotion } from "framer-motion";
+import { useReducedMotion } from "@/hooks/useReducedMotion";
 
 type Props = {
   children: string;

@@ -1,8 +1,6 @@
 "use client";
 
-import Image from "next/image";
-import { motion, useReducedMotion } from "framer-motion";
-import { useState } from "react";
+import { useReducedMotion } from "@/hooks/useReducedMotion";
 
 type MediaItem = {
   src: string;
@@ -11,18 +9,15 @@ type MediaItem = {
 };
 
 const FULL_SPEED = 34;
-const SLOW_SPEED = 82;
 
 export function HeroMediaMarquee({ items }: { items: MediaItem[] }) {
   const reduce = useReducedMotion();
-  const [hovered, setHovered] = useState(false);
-  const [activeKey, setActiveKey] = useState<string | null>(null);
 
   if (reduce) {
     return (
       <div className="mt-16 flex snap-x gap-5 overflow-x-auto pb-3 md:mt-20">
         {items.map((item) => (
-          <HeroMediaCard key={item.src} item={item} active={false} />
+          <HeroMediaCard key={item.src} item={item} />
         ))}
       </div>
     );
@@ -31,62 +26,33 @@ export function HeroMediaMarquee({ items }: { items: MediaItem[] }) {
   const track = [...items, ...items];
 
   return (
-    <div
-      className="-mx-[30px] mt-16 overflow-hidden pb-3 md:mt-20 [mask-image:linear-gradient(to_right,transparent,black_5%,black_95%,transparent)]"
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => {
-        setHovered(false);
-        setActiveKey(null);
-      }}
-    >
-      <motion.div
-        className="flex w-max gap-5 px-[30px]"
-        animate={{ x: ["0%", "-50%"] }}
-        transition={{
-          duration: hovered ? SLOW_SPEED : FULL_SPEED,
-          ease: "linear",
-          repeat: Infinity
-        }}
+    <div className="group/marquee -mx-[30px] mt-16 overflow-hidden pb-3 md:mt-20 [mask-image:linear-gradient(to_right,transparent,black_5%,black_95%,transparent)]">
+      <div
+        className="marquee-track flex w-max gap-5 px-[30px] group-hover/marquee:[animation-play-state:paused]"
+        style={{ "--marquee-duration": `${FULL_SPEED}s` } as React.CSSProperties}
       >
-        {track.map((item, index) => {
-          const key = `${item.src}-${index}`;
-          return (
-            <HeroMediaCard
-              key={key}
-              item={item}
-              active={activeKey === key}
-              onHover={() => setActiveKey(key)}
-            />
-          );
-        })}
-      </motion.div>
+        {track.map((item, index) => (
+          <HeroMediaCard key={`${item.src}-${index}`} item={item} eager={index === 0} />
+        ))}
+      </div>
     </div>
   );
 }
 
-function HeroMediaCard({
-  item,
-  active,
-  onHover
-}: {
-  item: MediaItem;
-  active: boolean;
-  onHover?: () => void;
-}) {
+function HeroMediaCard({ item, eager = false }: { item: MediaItem; eager?: boolean }) {
   return (
-    <motion.div
-      onMouseEnter={onHover}
-      animate={{ y: active ? -6 : 0 }}
-      transition={{ type: "spring", stiffness: 180, damping: 24 }}
-      className={`relative h-[260px] shrink-0 overflow-hidden rounded-[24px] bg-zinc-200 shadow-[0_1px_0_rgba(255,255,255,0.8)] md:h-[370px] [-webkit-mask-image:-webkit-radial-gradient(white,black)] ${item.wide ? "w-[280px] md:w-[360px]" : "w-[220px] md:w-[280px]"}`}
+    <div
+      className={`group/card relative h-[260px] shrink-0 overflow-hidden rounded-[24px] bg-zinc-200 shadow-[0_1px_0_rgba(255,255,255,0.8)] transition-transform duration-300 hover:-translate-y-1.5 md:h-[370px] [-webkit-mask-image:-webkit-radial-gradient(white,black)] ${item.wide ? "w-[280px] md:w-[360px]" : "w-[220px] md:w-[280px]"}`}
     >
-      <motion.div
-        className="absolute inset-0"
-        animate={{ scale: active ? 1.04 : 1 }}
-        transition={{ type: "spring", stiffness: 160, damping: 24 }}
-      >
-        <Image src={item.src} alt={item.alt} fill sizes="(max-width: 768px) 280px, 360px" className="object-cover" priority={item.src.includes("phone")} />
-      </motion.div>
-    </motion.div>
+      <div className="absolute inset-0 transition-transform duration-300 group-hover/card:scale-[1.04]">
+        <img
+          src={item.src}
+          alt={item.alt}
+          loading={eager ? "eager" : "lazy"}
+          decoding="async"
+          className="h-full w-full object-cover"
+        />
+      </div>
+    </div>
   );
 }

@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useScroll, useMotionValueEvent } from "framer-motion";
+import { motion } from "framer-motion";
 import { CalendarClock, Mail, Menu, Star, X } from "lucide-react";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -18,7 +18,7 @@ function Logo() {
   return (
     <a href="/" className="group flex items-center gap-3 rounded-pill focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent">
       <span className="relative grid size-11 place-items-center">
-        <img src="/devs-logo.svg" alt="DevS Logo" className="size-11" />
+        <img src="/devs-logo-static.svg" alt="DevS Logo" className="size-11" />
       </span>
       <span className="hidden font-display text-sm font-bold tracking-normal text-ink sm:inline">
         <RollingText>Developer Society</RollingText>
@@ -31,15 +31,13 @@ export function Nav() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
-  const { scrollY } = useScroll();
 
   useEffect(() => {
-    setScrolled(scrollY.get() > 40);
-  }, [scrollY]);
-
-  useMotionValueEvent(scrollY, "change", (latest) => {
-    setScrolled(latest > 40);
-  });
+    const onScroll = () => setScrolled(window.scrollY > 40);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
     <motion.header
@@ -52,8 +50,8 @@ export function Nav() {
         <nav
           aria-label="Primary"
           className={cn(
-            "flex min-h-[56px] flex-1 items-center gap-7 rounded-pill bg-white/85 px-3 shadow-[0_1px_20px_rgba(24,24,27,0.04)] backdrop-blur-xl transition md:flex-none md:px-4 md:pr-9",
-            scrolled ? "border border-zinc-200/70 bg-white/92" : "border border-transparent"
+            "flex min-h-[56px] flex-1 items-center gap-7 rounded-pill bg-white px-3 shadow-[0_1px_20px_rgba(24,24,27,0.04)] transition md:flex-none md:px-4 md:pr-9",
+            scrolled ? "border border-zinc-200/70" : "border border-transparent"
           )}
         >
           <Logo />
@@ -117,7 +115,7 @@ export function Nav() {
 
       <div
         className={cn(
-          "fixed inset-0 z-[60] bg-zinc-950/30 backdrop-blur-sm transition md:hidden",
+          "fixed inset-0 z-[60] bg-zinc-950/30 transition md:hidden",
           open ? "pointer-events-auto opacity-100" : "pointer-events-none opacity-0"
         )}
         onClick={() => setOpen(false)}
