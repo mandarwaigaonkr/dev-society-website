@@ -15,7 +15,7 @@ export function Footer() {
       className="border-t border-zinc-100 bg-[#f6f6f7] px-[15px] py-20 text-ink md:px-[30px]"
     >
       <div className="container-main">
-        <div className="grid gap-10 p-0 md:grid-cols-[1fr_1fr]">
+        <div className="flex flex-wrap justify-center gap-10 p-0 md:gap-32">
           <div>
             <h2 className="font-display text-lg font-bold">Socials</h2>
             <div className="mt-7 flex max-w-[300px] gap-3 rounded-[28px] bg-white p-3 text-zinc-700">
