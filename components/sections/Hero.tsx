@@ -7,11 +7,11 @@ import ArrowButton from "@/components/ui/ArrowButton";
 import { HeroMediaMarquee } from "@/components/sections/HeroMediaMarquee";
 
 const media = [
-  { src: "/mockups/watch.svg", alt: "Smart watch interface on a wrist", wide: false },
-  { src: "/mockups/tablet.svg", alt: "Tablet product interface mockup", wide: true },
-  { src: "/mockups/phone.svg", alt: "Phone product interface in hand", wide: false },
-  { src: "/mockups/monitor.svg", alt: "Monitor product interface mockup", wide: true },
-  { src: "/mockups/book.svg", alt: "Editorial brand book mockup", wide: false }
+  { src: "/mockups/cu-nav.jpg", alt: "CU Nav App Mockup", wide: false },
+  { src: "/mockups/cu-now.jpg", alt: "CU Now App Mockup", wide: false },
+  { src: "/mockups/cu-nav.jpg", alt: "CU Nav App Mockup", wide: false },
+  { src: "/mockups/cu-now.jpg", alt: "CU Now App Mockup", wide: false },
+  { src: "/mockups/cu-nav.jpg", alt: "CU Nav App Mockup", wide: false }
 ];
 
 export function Hero() {

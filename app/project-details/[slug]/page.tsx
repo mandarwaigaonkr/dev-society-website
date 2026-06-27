@@ -45,8 +45,8 @@ export default function ProjectDetailsPage({ params }: Props) {
           </dl>
         </div>
 
-        <div className="relative mt-14 h-[520px] overflow-hidden rounded-[34px] bg-zinc-200">
-          <Image src={project.cover} alt={`${project.title} case study cover`} fill sizes="100vw" className="object-cover" priority />
+        <div className="relative mt-14 h-[520px] overflow-hidden rounded-[34px] bg-transparent">
+          <Image src={project.cover} alt={`${project.title} case study cover`} fill sizes="100vw" className="object-contain" priority />
         </div>
       </section>
 
