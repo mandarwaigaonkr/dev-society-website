@@ -34,7 +34,7 @@ export function Contact() {
     setStatus("pending");
 
     // Web3Forms integration
-    data.append("access_key", process.env.NEXT_PUBLIC_WEB3FORMS_KEY || "YOUR_ACCESS_KEY_HERE");
+    data.append("access_key", process.env.NEXT_PUBLIC_WEB3FORMS_KEY || "17cec68d-518a-4c84-afb2-23c0a61e83d5");
 
     try {
       const response = await fetch("https://api.web3forms.com/submit", {
