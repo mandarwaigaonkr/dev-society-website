@@ -12,7 +12,7 @@ export function Contact() {
   const [status, setStatus] = useState<Status>("idle");
   const [errors, setErrors] = useState<Record<string, string>>({});
 
-  function onSubmit(event: React.FormEvent<HTMLFormElement>) {
+  async function onSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const form = event.currentTarget;
     const data = new FormData(form);
@@ -32,10 +32,28 @@ export function Contact() {
     }
 
     setStatus("pending");
-    window.setTimeout(() => {
-      form.reset();
-      setStatus("success");
-    }, 900);
+
+    // Web3Forms integration
+    data.append("access_key", process.env.NEXT_PUBLIC_WEB3FORMS_KEY || "YOUR_ACCESS_KEY_HERE");
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: data
+      });
+      const result = await response.json();
+      
+      if (result.success) {
+        form.reset();
+        setStatus("success");
+      } else {
+        console.error(result);
+        setStatus("error");
+      }
+    } catch (error) {
+      console.error(error);
+      setStatus("error");
+    }
   }
 
   return (

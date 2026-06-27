@@ -34,15 +34,15 @@
   --footer-text: var(--white);
   --footer-text-muted: 255 255 255;
   --footer-border: var(--zinc-800);
-  --r-xs: 4px;
-  --r-sm: 8px;
-  --r-md: 12px;
-  --r-lg: 16px;
-  --r-xl: 24px;
+  --r-xs: 2px;
+  --r-sm: 4px;
+  --r-md: 8px;
+  --r-lg: 12px;
+  --r-xl: 16px;
   --r-pill: 999px;
   --pad-x: 30px;
-  --pad-y: 100px;
-  --gap-section: 56px;
+  --pad-y: 80px;
+  --gap-section: 40px;
   --max-w: 1200px;
   --ease-soft: cubic-bezier(0.44, 0, 0.56, 1);
   --dur: 0.4s;
@@ -55,6 +55,6 @@
 @media (max-width: 809.98px) {
   :root {
     --pad-x: 15px;
-    --pad-y: 80px;
+    --pad-y: 56px;
   }
 }

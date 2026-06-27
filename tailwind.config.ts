@@ -35,10 +35,10 @@ const config: Config = {
         soft: ["var(--font-inter)", "Inter", "sans-serif"]
       },
       borderRadius: {
-        xl: "24px",
-        xl2: "1rem",
-        xl3: "1.5rem",
-        xl4: "2rem",
+        xl: "16px",
+        xl2: "12px",
+        xl3: "1rem",
+        xl4: "1.5rem",
         pill: "999px"
       },
       maxWidth: {
