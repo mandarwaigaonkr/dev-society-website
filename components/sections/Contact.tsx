@@ -73,7 +73,7 @@ export function Contact({ hideHeader = false }: { hideHeader?: boolean }) {
           whileInView="show"
           viewport={{ once: true, amount: 0.25 }}
           onSubmit={onSubmit}
-          className="mx-auto mt-16 max-w-[700px] rounded-[28px] bg-white p-8 md:p-10"
+          className={cn("mx-auto max-w-[700px] rounded-[28px] bg-white p-8 md:p-10", hideHeader ? "mt-4" : "mt-16")}
           noValidate
         >
           {[

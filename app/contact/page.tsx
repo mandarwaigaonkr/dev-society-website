@@ -5,7 +5,7 @@ import SplitWords from "@/components/ui/SplitWords";
 export default function ContactPage() {
   return (
     <main>
-      <section className="container-main flex flex-col items-center justify-center py-24 text-center">
+      <section className="container-main flex flex-col items-center justify-center pt-24 pb-4 text-center">
         <SplitWords
           text="Let's build the useful thing together"
           as="h1"
