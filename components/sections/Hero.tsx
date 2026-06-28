@@ -22,7 +22,7 @@ export function Hero() {
           {/* Floating brand card — left */}
           <motion.div
             variants={reveal}
-            className="flex w-fit flex-col items-center gap-5 rounded-[32px] bg-white p-6 shadow-[0_4px_48px_rgba(0,0,0,0.07)] md:p-8 mt-2"
+            className="mx-auto flex w-fit flex-col items-center gap-5 rounded-[32px] bg-white p-6 shadow-[0_4px_48px_rgba(0,0,0,0.07)] md:p-8 lg:mx-0 lg:mt-2"
           >
             <div className="grid size-[140px] place-items-center rounded-2xl bg-zinc-50 p-4 md:size-[180px]">
               <Image src="/devs-logo.svg" alt="Developer Society logo" width={180} height={180} className="h-full w-full object-contain" priority />
@@ -34,13 +34,13 @@ export function Hero() {
           </motion.div>
 
           {/* Title + buttons — right */}
-          <div>
-            <motion.h1 variants={reveal} className="font-display text-[clamp(4.5rem,8vw,9.5rem)] font-bold leading-[0.95] tracking-tight text-ink">
+          <div className="text-center lg:text-left">
+            <motion.h1 variants={reveal} className="font-display text-[clamp(3.2rem,11vw,9.5rem)] font-bold leading-[0.95] tracking-tight text-ink">
               Developer&apos;s Society
               <br />
-              <span className="text-[clamp(2rem,4vw,4rem)] font-medium text-zinc-400">Christ University</span>
+              <span className="text-[clamp(1.5rem,6vw,4rem)] font-medium text-zinc-400">Christ University</span>
             </motion.h1>
-            <motion.div variants={reveal} className="mt-10 flex flex-wrap items-center gap-4">
+            <motion.div variants={reveal} className="mt-8 flex flex-wrap items-center justify-center gap-4 lg:mt-10 lg:justify-start">
               <ArrowButton href="/contact" label="Start a Project" />
               <ArrowButton href="/all-projects" label="See Projects" variant="ghost" />
             </motion.div>

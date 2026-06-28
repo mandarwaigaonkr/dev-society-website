@@ -29,7 +29,7 @@ export function TestimonialsMarquee({ testimonials }: { testimonials: Testimonia
   const track = [...testimonials, ...testimonials];
 
   return (
-    <div className="group/marquee -mx-[30px] overflow-hidden px-[30px]">
+    <div className="group/marquee -mx-[15px] overflow-hidden px-[15px] md:-mx-[30px] md:px-[30px]">
       <div
         className="marquee-track flex w-max gap-5 group-hover/marquee:[animation-play-state:paused]"
         style={{ "--marquee-duration": `${FULL_SPEED}s` } as React.CSSProperties}

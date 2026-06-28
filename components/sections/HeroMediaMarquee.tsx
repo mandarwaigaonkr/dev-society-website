@@ -26,9 +26,9 @@ export function HeroMediaMarquee({ items }: { items: MediaItem[] }) {
   const track = [...items, ...items];
 
   return (
-    <div className="group/marquee -mx-[30px] mt-16 overflow-hidden pb-3 md:mt-20 [mask-image:linear-gradient(to_right,transparent,black_5%,black_95%,transparent)]">
+    <div className="group/marquee -mx-[15px] mt-16 overflow-hidden pb-3 md:-mx-[30px] md:mt-20 [mask-image:linear-gradient(to_right,transparent,black_5%,black_95%,transparent)]">
       <div
-        className="marquee-track flex w-max gap-5 px-[30px] group-hover/marquee:[animation-play-state:paused]"
+        className="marquee-track flex w-max gap-5 px-[15px] group-hover/marquee:[animation-play-state:paused] md:px-[30px]"
         style={{ "--marquee-duration": `${FULL_SPEED}s` } as React.CSSProperties}
       >
         {track.map((item, index) => (

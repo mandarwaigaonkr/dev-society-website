@@ -31,21 +31,21 @@ export function About() {
               We empower students to explore technology, build impactful projects, and grow as developers.
             </p>
           </motion.article>
-          <motion.article variants={reveal} className="rounded-[28px] border border-white bg-white/55 p-8 text-zinc-400 md:p-10">
-            <div className="mb-7 flex items-center gap-4 text-sm font-bold">
-              <span className="size-3 rounded-full bg-zinc-400" />
+          <motion.article variants={reveal} className="rounded-[28px] bg-white p-8 md:p-10">
+            <div className="mb-7 flex items-center gap-4 text-sm font-bold text-accent">
+              <span className="size-3 rounded-full bg-accent" />
               Our Community
             </div>
-            <p className="text-2xl leading-relaxed">
+            <p className="text-2xl leading-relaxed text-zinc-800">
               Based at Christ University, we are a thriving community of passionate coders, designers, and innovators building solutions for the future.
             </p>
           </motion.article>
-          <motion.article variants={reveal} className="rounded-[28px] border border-white bg-white/55 p-8 text-zinc-400 md:p-10">
-            <div className="mb-7 flex items-center gap-4 text-sm font-bold">
-              <span className="size-3 rounded-full bg-zinc-400" />
+          <motion.article variants={reveal} className="rounded-[28px] bg-white p-8 md:p-10">
+            <div className="mb-7 flex items-center gap-4 text-sm font-bold text-accent">
+              <span className="size-3 rounded-full bg-accent" />
               Our Approach
             </div>
-            <p className="text-2xl leading-relaxed">
+            <p className="text-2xl leading-relaxed text-zinc-800">
               We believe in hands-on learning and collaboration. Through hackathons, workshops, and open-source projects, we bridge the gap between theory and practice.
             </p>
           </motion.article>

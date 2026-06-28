@@ -20,7 +20,7 @@ export function Brands() {
   return (
     <section aria-label="Clients & collaborators" className="pb-24">
       <div className="container-main">
-        <motion.div variants={reveal} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.35 }} className="overflow-hidden rounded-[80px] bg-white py-20">
+        <motion.div variants={reveal} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.35 }} className="overflow-hidden rounded-[40px] bg-white py-10 md:rounded-[80px] md:py-20">
           <Marquee speed={28} gap={64}>
             {logos.map((logo) => (
               <span key={logo} className="font-display text-2xl font-bold text-zinc-600 opacity-75 transition hover:opacity-100">

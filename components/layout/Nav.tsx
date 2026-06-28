@@ -11,6 +11,7 @@ import RollingText from "@/components/ui/RollingText";
 const links = [
   { label: "About", href: "/about" },
   { label: "Projects", href: "/all-projects" },
+  { label: "Our team", href: "/our-team" },
   { label: "Contact", href: "/contact" }
 ];
 
@@ -62,7 +63,7 @@ export function Nav() {
                 <a
                   key={link.href}
                   href={link.href}
-                  className={cn("group relative transition hover:text-ink", active ? "text-accent" : "text-zinc-700")}
+                  className={cn("group relative transition hover:text-ink active:text-accent", active ? "text-accent" : "text-zinc-700")}
                 >
                   <RollingText>{link.label}</RollingText>
                   <span
@@ -121,7 +122,7 @@ export function Nav() {
             <a
               key={link.href}
               href={link.href}
-              className="rounded-2xl px-4 py-4 font-display text-2xl font-bold"
+              className="rounded-2xl px-4 py-4 font-display text-2xl font-bold transition active:text-accent"
               target={link.href.startsWith("http") ? "_blank" : undefined}
               rel={link.href.startsWith("http") ? "noreferrer" : undefined}
               onClick={() => setOpen(false)}

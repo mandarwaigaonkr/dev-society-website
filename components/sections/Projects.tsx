@@ -23,17 +23,17 @@ export function Projects() {
               key={project.slug}
               variants={reveal}
               href={`/project-details/${project.slug}`}
-              className="group relative h-[430px] overflow-hidden rounded-[28px] bg-zinc-200 transition duration-300 hover:-translate-y-2 hover:scale-[1.01] md:h-[590px] [-webkit-mask-image:-webkit-radial-gradient(white,black)]"
+              className="group relative aspect-[4/5] w-full overflow-hidden rounded-[28px] bg-zinc-200 transition duration-300 hover:-translate-y-2 hover:scale-[1.01] md:h-[590px] md:aspect-auto [-webkit-mask-image:-webkit-radial-gradient(white,black)]"
             >
               <Image src={project.cover} alt={`${project.title} project mockup`} fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover rounded-[28px] transition duration-500 group-hover:scale-[1.04]" />
-              <div className="absolute inset-x-8 bottom-8 flex items-center justify-between">
-                <span className="inline-flex min-h-12 items-center gap-5 rounded-pill bg-white px-6 text-sm font-bold">
+              <div className="absolute inset-x-4 bottom-4 flex items-center justify-between md:inset-x-8 md:bottom-8">
+                <span className="inline-flex min-h-10 items-center gap-3 rounded-pill bg-white px-4 text-xs font-bold md:min-h-12 md:gap-5 md:px-6 md:text-sm">
                   {project.title}
                   <span>/</span>
                   {project.year}
                 </span>
-                <span className="grid size-12 place-items-center rounded-pill bg-white text-accent transition group-hover:translate-x-1">
-                  <ArrowRight size={22} />
+                <span className="grid size-10 place-items-center rounded-pill bg-white text-accent transition group-hover:translate-x-1 md:size-12">
+                  <ArrowRight className="size-5 md:size-[22px]" />
                 </span>
               </div>
               <span className="absolute bottom-24 left-8 translate-y-4 rounded-pill bg-black px-4 py-2 text-xs font-bold text-white opacity-0 transition group-hover:translate-y-0 group-hover:opacity-100">
