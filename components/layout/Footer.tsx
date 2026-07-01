@@ -65,7 +65,7 @@ export function Footer() {
                 ["About", "/about"],
                 ["404", "/404"]
               ].map(([item, href]) => (
-                <a key={item} href={href} className="rounded-2xl px-4 py-3 transition hover:bg-zinc-100 hover:text-ink">
+                <a key={item} href={href} className="rounded-2xl px-4 py-3 transition hover:bg-zinc-100 hover:text-ink active:text-accent">
                   {item}
                 </a>
               ))}
@@ -73,9 +73,11 @@ export function Footer() {
           </div>
 
         </div>
-        <div className="mt-12 flex flex-wrap items-center justify-between gap-4 rounded-[60px] bg-white px-8 py-6 text-sm text-zinc-500 shadow-[0_1px_0_rgba(24,24,27,0.04)]">
-          <a href="/legal/privacy" className="transition hover:text-ink">Privacy Policy</a>
-          <a href="/legal/terms" className="transition hover:text-ink">Terms of Service</a>
+        <div className="mt-12 flex flex-col items-center justify-center gap-4 rounded-[32px] bg-white px-8 py-6 text-center text-sm text-zinc-500 shadow-[0_1px_0_rgba(24,24,27,0.04)] md:flex-row md:justify-between md:rounded-[60px] md:text-left">
+          <div className="flex flex-wrap items-center justify-center gap-4 md:justify-start">
+            <a href="/legal/privacy" className="transition hover:text-ink active:text-accent">Privacy Policy</a>
+            <a href="/legal/terms" className="transition hover:text-ink active:text-accent">Terms of Service</a>
+          </div>
           <span>© 2026 Developer Society, Christ University. Built for launch.</span>
         </div>
       </div>

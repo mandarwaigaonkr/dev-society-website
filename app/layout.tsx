@@ -22,7 +22,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={inter.variable}>
-      <body>
+      <body className="overflow-x-clip">
         <ScrollToAnchor>
           <BlurTop />
           <Nav />
